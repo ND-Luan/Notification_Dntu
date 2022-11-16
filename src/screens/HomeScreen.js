@@ -1,22 +1,31 @@
-import React from "react";
-import {View, Text,StyleSheet} from 'react-native';
 
-function HomeScreen (){
+import ButtonInfo from "@components/ButtonInfo";
+import React from "react";
+import { View, Text, StyleSheet } from 'react-native';
+
+function HomeScreen() {
 
     return (
-        <View style = {styles.container}>
-            <Text>HomeScreen</Text>
+        <View style={styles.container}>
+            <View style={styles.gap}>
+                <ButtonInfo title = "Thong bao" subTitle="Sub thong bap" />
+                <ButtonInfo title = "Thong bao" subTitle="Sub thong bap" />
+                <ButtonInfo title = "Thong bao" subTitle="Sub thong bap" />
+                <ButtonInfo title = "Thong bao" subTitle="Sub thong bap" />
+            </View>
         </View>
     );
 
 }
 
 const styles = StyleSheet.create({
-    container:{
-        flex:1,
-        justifyContent:"center",
-        alignItems:"center"
+    container: {
+        flex: 1,
+    },
+    gap:{
+        padding:10,
+        margin:5
+    },
 
-    }
 })
 export default HomeScreen
