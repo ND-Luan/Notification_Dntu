@@ -1,15 +1,15 @@
 import React from "react";
 import {View, Text,StyleSheet} from 'react-native';
-import { start } from "../start";
-function HomeScreen (){
-    start()
+
+function NotificationScreen (){
+
     return (
         <View style = {styles.container}>
-            <Text>HomeScreen</Text>
+            <Text>Notification Screen</Text>
         </View>
     );
 
-}
+}   
 
 const styles = StyleSheet.create({
     container:{
@@ -19,4 +19,4 @@ const styles = StyleSheet.create({
 
     }
 })
-export default HomeScreen
+export default NotificationScreen;
