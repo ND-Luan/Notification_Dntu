@@ -1,6 +1,8 @@
 import React from "react";
 import {View, Text,StyleSheet} from 'react-native';
+import { start } from "../start";
 function HomeScreen (){
+    start()
     return (
         <View style = {styles.container}>
             <Text>HomeScreen</Text>
