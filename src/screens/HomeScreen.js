@@ -1,10 +1,12 @@
 
 import ButtonInfo from "@components/ButtonInfo";
+import start from "@crawl/start";
+
 import React from "react";
 import { View, Text, StyleSheet } from 'react-native';
 
 function HomeScreen() {
-
+    start()
     return (
         <View style={styles.container}>
             <View style={styles.gap}>
