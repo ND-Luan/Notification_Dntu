@@ -3,7 +3,7 @@
 import React from "react";
 import { View, TouchableOpacity, StyleSheet, Text, Image } from 'react-native'
 import FastImage from 'react-native-fast-image'
-function ButtonInfo({ title, subTitle, image }) {
+function ButtonInfo({ title, subTitle }) {
     const url = "https://sv.dntu.edu.vn/images/dntu-logo.png"
     return (
         <View>
@@ -13,7 +13,7 @@ function ButtonInfo({ title, subTitle, image }) {
             >
                 <View style={styles.row}>
                     <View style={styles}>
-                        <Text style={[styles.textTitle, ]}> {title}</Text>
+                        <Text style={styles.textTitle }> {title}</Text>
                         <Text style={styles.textSubTitle}> {subTitle}</Text>
                     </View>
 
