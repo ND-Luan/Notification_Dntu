@@ -40,10 +40,10 @@ function App() {
             tabBarIcon: ({focused}) => <FontAwesomeIcon icon={faHome} size={30}/>,
             tabBarLabel:({focused}) =><Text style={[styles.tabHeader, {color: focused ? "red": "black"}]}>Home</Text>
           }} />
-        <Tab.Screen name="Notification" component={NotificationScreen}
+        <Tab.Screen name="WebView" component={NotificationScreen}
           options={{
             tabBarIcon: () => <FontAwesomeIcon icon={faBell} size={30}/>,
-            tabBarLabel:({focused}) =><Text style={[styles.tabHeader, {color: focused ? "red": "black"}]}>Notification</Text>
+            tabBarLabel:({focused}) =><Text style={[styles.tabHeader, {color: focused ? "red": "black"}]}>WebView</Text>
           }} />
       </Tab.Navigator>
     </NavigationContainer>

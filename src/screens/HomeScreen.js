@@ -4,15 +4,16 @@ import React, {useEffect} from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 
 function HomeScreen() {
+  var title = "Thong bao"
   const url = 'https://crawl.lunnh.repl.co/';
   const getData = url => {
     fetch(url)
-      .then(res => res.json())
-      .then(data => {
-        data.map((val, id) => {
-          return <ButtonInfo key={id} title="ThongBao" subTitle="Thong Bao" />;
-        });
-      });
+   .then(res => res.json())
+   .then(data => {
+      var title = "Thong bao"
+       return <ButtonInfo key={id} title={title} subTitle={null} />;
+
+   }).catch((err)=>{ console.log(err)})
   };
 
   return (
