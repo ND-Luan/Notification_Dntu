@@ -3,17 +3,19 @@
 import React from "react";
 import { View, TouchableOpacity, StyleSheet, Text} from 'react-native'
 import FastImage from 'react-native-fast-image'
-function ButtonInfo({ title, subTitle }) {
+import {useNavigation} from '@react-navigation/native';
+function ButtonInfo({ title, subTitle, href }) {
+    const {navigate} = useNavigation();
     const url = "https://sv.dntu.edu.vn/images/dntu-logo.png"
     return (
         <View>
             <TouchableOpacity
                 style={styles.btn}
-                onPress={() => { console.log("Pressed!") }}
+                onPress={() => { navigate('WebDetail') }}
             >
                 <View style={styles.row}>
-                    <View style={styles}>
-                        <Text style={styles.textTitle }> {title}</Text>
+                    <View style={styles.col}>
+                        <Text numberOfLines={1} style={styles.textTitle }> {title}</Text>
                         <Text style={styles.textSubTitle}> {subTitle}</Text>
                     </View>
 
@@ -52,18 +54,25 @@ const styles = StyleSheet.create({
         padding: 20,
         flexDirection: "row",
         justifyContent: "space-between",
-        alignItems:"center"
+        alignItems:"center",
+     
     },
     textTitle: {
-        fontSize: 20,
+        fontSize: 15,
         textAlign:"left"
     },
     textSubTitle: {
-        fontSize: 14
+        fontSize: 12
     },
     image: {
         width: 60,
         height: 60
+    },
+    col:{
+        flex:1,
+        flexDirection:"column",
+
+
     }
 })
 export default ButtonInfo;

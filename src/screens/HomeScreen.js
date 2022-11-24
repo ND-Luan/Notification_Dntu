@@ -1,28 +1,38 @@
 import ButtonInfo from '@components/ButtonInfo';
 
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {View, Text, StyleSheet} from 'react-native';
+import {ScrollView} from 'react-native-gesture-handler';
 
 function HomeScreen() {
-  var title = "Thong bao"
   const url = 'https://crawl.lunnh.repl.co/';
-  const getData = url => {
-    fetch(url)
-   .then(res => res.json())
-   .then(data => {
-      var title = "Thong bao"
-       return <ButtonInfo key={id} title={title} subTitle={null} />;
-
-   }).catch((err)=>{ console.log(err)})
+  //const url = 'https://jsonplaceholder.typicode.com/users';
+  
+  var [data, setData] = useState([]);
+  const handleData = async () => {
+    var res = await fetch(url);
+    var resJson = await res.json();
+    setData(resJson);
   };
 
+  useEffect(() => {
+    handleData();
+  }, []);
+
   return (
-    <View style={styles.container}>
-      <View style={styles.gap}>
-        {getData(url)}
-        <ButtonInfo title="title" />
+    <ScrollView>
+      <View style={styles.container}>
+        <View style={styles.gap}>
+          {data.map((val, id) => {
+            return (
+              <View key={id}>
+                <ButtonInfo title={val.title} subTitle={val.date}  />
+              </View>
+            );
+          })}
+        </View>
       </View>
-    </View>
+    </ScrollView>
   );
 }
 
